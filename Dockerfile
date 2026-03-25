@@ -37,8 +37,8 @@ RUN mkdir -p app && printf "%s" "${APP_VERSION}" > app/VERSION
 
 FROM base as production
 
-RUN chown -R app:app /app
-USER app
+# RUN chown -R app:app /app
+# USER app
 
 EXPOSE 8000
 
