@@ -28,6 +28,7 @@ COPY app/ ./app/
 
 RUN mkdir -p app && printf "%s" "${APP_VERSION}" > app/VERSION
 
+COPY main.py ./main.py
 
 # ARG APP_UID=1000
 # ARG APP_GID=1000
