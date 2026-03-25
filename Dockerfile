@@ -29,11 +29,11 @@ COPY app/ ./app/
 RUN mkdir -p app && printf "%s" "${APP_VERSION}" > app/VERSION
 
 
-ARG APP_UID=1000
-ARG APP_GID=1000
+# ARG APP_UID=1000
+# ARG APP_GID=1000
 
-RUN groupadd --gid ${APP_GID} app && \
-    useradd --uid ${APP_UID} --gid ${APP_GID} --create-home --shell /bin/bash app
+# RUN groupadd --gid ${APP_GID} app && \
+#     useradd --uid ${APP_UID} --gid ${APP_GID} --create-home --shell /bin/bash app
 
 FROM base as production
 
