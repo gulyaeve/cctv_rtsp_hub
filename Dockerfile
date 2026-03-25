@@ -45,22 +45,23 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
-CMD ["sh", "-c", "alembic -c app/alembic.ini upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+# CMD ["sh", "-c", "alembic -c app/alembic.ini upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+CMD ["sh", "-c", "alembic -c app/alembic.ini upgrade head && python main.py"]
 
 
-FROM base as test
+# FROM base as test
 
-COPY assets/videos/big_buck_bunny.mp4 ./assets/videos/big_buck_bunny.mp4
+# COPY assets/videos/big_buck_bunny.mp4 ./assets/videos/big_buck_bunny.mp4
 
-RUN chown -R app:app /app
-USER app
+# RUN chown -R app:app /app
+# USER app
 
-CMD ["sh", "-c", "alembic -c app/alembic.ini upgrade head && pytest -v app/tests -m 'not integration'"]
+# CMD ["sh", "-c", "alembic -c app/alembic.ini upgrade head && pytest -v app/tests -m 'not integration'"]
 
 
-FROM base as development
+# FROM base as development
 
-RUN chown -R app:app /app
-USER app
+# RUN chown -R app:app /app
+# USER app
 
-CMD ["sh", "-c", "alembic -c app/alembic.ini upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"]
+# CMD ["sh", "-c", "alembic -c app/alembic.ini upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"]

@@ -2,6 +2,8 @@ from typing import List
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from urllib.parse import quote
+
 
 
 class Settings(BaseSettings):
@@ -52,6 +54,22 @@ class Settings(BaseSettings):
     def media_server_rtsp_base_url(self) -> str:
         """Construct RTSP base URL with credentials."""
         return f"rtsp://{self.MEDIA_USERNAME}:{self.MEDIA_PASSWORD}@{self.MEDIA_SERVER_HOST}:{self.MEDIA_SERVER_PORT}"
+
+
+    # RabbitMQ
+    RABBITMQ_HOST: str
+    RABBITMQ_PORT: int
+    RABBITMQ_DEFAULT_USER: str
+    RABBITMQ_DEFAULT_PASS: str
+
+    @property
+    def rabbitmq_url(self) -> str:
+        return (
+            f"amqp://{self.RABBITMQ_DEFAULT_USER}:{quote(self.RABBITMQ_DEFAULT_PASS)}@" f"{self.RABBITMQ_HOST}:{self.RABBITMQ_PORT}"
+        )
+    
+    # QUEUE_NAME: str
+    CAMERA_EXCHANGE_NAME: str = "cameras"
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
