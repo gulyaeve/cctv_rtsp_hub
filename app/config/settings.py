@@ -1,7 +1,7 @@
 from typing import List
 
 from pydantic import Field
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -42,18 +42,18 @@ class Settings(BaseSettings):
 
     # MinIO settings
     MINIO_ENABLED: bool = Field(default=False)
-    MINIO_ENDPOINT: str = Field(default="minio:9000")
-    MINIO_ACCESS_KEY: str = Field(default="YOUR_ACCESS_KEY")
-    MINIO_SECRET_KEY: str = Field(default="YOUR_SECRET_KEY")
-    MINIO_SECURE: bool = Field(default=False)
-    MINIO_BUCKET_NAME: str = Field(default="videos")
+    # MINIO_ENDPOINT: str = Field(default="minio:9000")
+    # MINIO_ACCESS_KEY: str = Field(default="YOUR_ACCESS_KEY")
+    # MINIO_SECRET_KEY: str = Field(default="YOUR_SECRET_KEY")
+    # MINIO_SECURE: bool = Field(default=False)
+    # MINIO_BUCKET_NAME: str = Field(default="videos")
 
     @property
     def media_server_rtsp_base_url(self) -> str:
         """Construct RTSP base URL with credentials."""
         return f"rtsp://{self.MEDIA_USERNAME}:{self.MEDIA_PASSWORD}@{self.MEDIA_SERVER_HOST}:{self.MEDIA_SERVER_PORT}"
 
-    model_config = {"env_file": ".env"}
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 
 settings = Settings()
