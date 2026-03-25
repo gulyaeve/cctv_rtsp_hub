@@ -86,7 +86,7 @@ services:
       - ./app:/app/app
       - ./assets:/app/assets
       - ./logs:/app/logs
-      - ./rtsp_hub.db:./rtsp_hub.db
+      - ./rtsp_hub.db:/app/rtsp_hub.db
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     depends_on:
