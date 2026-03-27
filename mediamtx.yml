@@ -40,18 +40,22 @@
 # * internal: credentials are stored in the configuration file
 # * http: an external HTTP URL is contacted to perform authentication
 # * jwt: an external identity server provides authentication through JWTs
-authMethod: internal
+authMethod: http
+authHTTPAddress: http://cctv_backend/check_token
 
-# Internal authentication.
-# list of users.
-authInternalUsers:
-  # Default unprivileged user.
-  # Username. 'any' means any user, including anonymous ones.
-- user: any
-  # IPs or networks allowed to use this user. An empty list means any IP.
-  ips: []
-  # List of permissions.
-  permissions:
+
+# authMethod: internal
+
+# # Internal authentication.
+# # list of users.
+# authInternalUsers:
+#   # Default unprivileged user.
+#   # Username. 'any' means any user, including anonymous ones.
+# - user: any
+#   # IPs or networks allowed to use this user. An empty list means any IP.
+#   ips: []
+#   # List of permissions.
+#   permissions:
 
 
 ###############################################
