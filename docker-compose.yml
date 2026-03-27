@@ -18,7 +18,7 @@ services:
   #     - 9001:9001
 
   media-service:
-    image: bluenviron/mediamtx:1.15.1
+    image: bluenviron/mediamtx:1.17.0
     container_name: media-service
     environment:
       MTX_PATHDEFAULTS_RECORD: no
