@@ -41,7 +41,7 @@
 # * http: an external HTTP URL is contacted to perform authentication
 # * jwt: an external identity server provides authentication through JWTs
 authMethod: http
-authHTTPAddress: http://cctv_backend/check_token
+authHTTPAddress: http://cctv_backend/api/users/check_token
 
 
 # authMethod: internal
