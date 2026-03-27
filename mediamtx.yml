@@ -72,7 +72,7 @@ rtspTransports: [udp]
 webrtc: yes
 webrtcAddress: :8889
 webrtcEncryption: no
-webrtcAllowOrigin: '*'
+webrtcAllowOrigins: [cctv.itmoscow]
 webrtcLocalUDPAddress: :8189
 webrtcIPsFromInterfaces: yes
 webrtcAdditionalHosts: [cctv.itmoscow]
