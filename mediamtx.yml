@@ -42,7 +42,7 @@
 # * jwt: an external identity server provides authentication through JWTs
 authMethod: http
 authHTTPAddress: https://cctv.itmoscow/api/users/check_token
-# authHTTPFingerprint: BE6F6CE1E0E62966BCF6179B69ACE7DF1944979C10D42D62B40E643889E8C1D0
+authHTTPFingerprint: B4649B5BADFE9B81DBA4BDAAE47E283923AAA7733D25540E07544D83CD6AB44B
 
 
 # authMethod: internal
