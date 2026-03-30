@@ -85,7 +85,7 @@ webrtcAllowOrigins: ["https://*.cctv.itmoscow"]
 webrtcLocalUDPAddress: ''
 webrtcIPsFromInterfaces: yes
 webrtcAdditionalHosts: [cctv.itmoscow, media.cctv.itmoscow]
-webrtcTrustedProxies: [cctv-api-nginx-1]
+# webrtcTrustedProxies: [cctv-api-nginx-1]
 
 ###############################################
 # Path settings
