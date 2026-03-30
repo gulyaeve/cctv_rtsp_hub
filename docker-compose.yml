@@ -50,7 +50,7 @@ services:
     #   - 8888:8888 
     #   - 8890:8890/udp 
     #   - 8189:8189/udp 
-    #   - 8889:8889
+      - 8889:8889
 
   cctv-rtsp-hub:
     image: rtsp-hub:prod
