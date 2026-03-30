@@ -9,6 +9,8 @@ from urllib.parse import quote
 class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./rtsp_hub.db"
 
+    TOKEN_BEARER: str = "Admin123"
+
     # API / App metadata
     API_PREFIX: str = "/api"
     PROJECT_NAME: str = "RTSPHub"

@@ -102,7 +102,7 @@ class StreamWorker:
                 "-c:a", "libopus", "-b:a", "64K", "-async", "50",
                 "-f",
                 "rtsp",
-                self.output_url,
+                f"{self.output_url}?token={settings.TOKEN_BEARER}",
             ]
         )
 
