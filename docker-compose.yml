@@ -40,17 +40,17 @@ services:
       - ./assets/record:${VIDEO_RECORD_PATH}
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      - ./cctv.itmoscow.key.pem:/ssl/cctv.itmoscow.key.pem
-      - ./cctv.itmoscow.pem:/ssl/cctv.itmoscow.pem
+      # - ./cctv.itmoscow.key.pem:/ssl/cctv.itmoscow.key.pem
+      # - ./cctv.itmoscow.pem:/ssl/cctv.itmoscow.pem
     networks:
       - default
-    ports:
-      - 8554:8554 
-      - 1935:1935 
-      - 8888:8888 
-      - 8890:8890/udp 
-      - 8189:8189/udp 
-      - 8889:8889
+    # ports:
+    #   - 8554:8554 
+    #   - 1935:1935 
+    #   - 8888:8888 
+    #   - 8890:8890/udp 
+    #   - 8189:8189/udp 
+    #   - 8889:8889
 
   cctv-rtsp-hub:
     image: rtsp-hub:prod

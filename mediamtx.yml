@@ -42,7 +42,7 @@
 # * jwt: an external identity server provides authentication through JWTs
 authMethod: http
 authHTTPAddress: https://cctv.itmoscow/api/users/check_token
-authHTTPFingerprint: BE6F6CE1E0E62966BCF6179B69ACE7DF1944979C10D42D62B40E643889E8C1D0
+# authHTTPFingerprint: BE6F6CE1E0E62966BCF6179B69ACE7DF1944979C10D42D62B40E643889E8C1D0
 
 
 # authMethod: internal
@@ -76,9 +76,9 @@ rtspTransports: [udp]
 # Basic MediaMTX configuration
 webrtc: yes
 webrtcAddress: :8889
-webrtcEncryption: yes
-webrtcServerKey: /ssl/cctv.itmoscow.key.pem
-webrtcServerCert: /ssl/cctv.itmoscow.pem
+webrtcEncryption: no
+# webrtcServerKey: /ssl/cctv.itmoscow.key.pem
+# webrtcServerCert: /ssl/cctv.itmoscow.pem
 webrtcAllowOrigin: '*'
 webrtcLocalUDPAddress: :8189
 webrtcIPsFromInterfaces: yes
