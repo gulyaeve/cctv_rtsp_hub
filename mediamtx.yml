@@ -76,11 +76,12 @@ rtspTransports: [udp]
 # Basic MediaMTX configuration
 webrtc: yes
 webrtcAddress: :8889
-webrtcEncryption: yes
-webrtcServerKey: /ssl/cctv.itmoscow.key
-webrtcServerCert: /ssl/cctv.itmoscow.crt
+webrtcEncryption: no
+# webrtcEncryption: yes
+# webrtcServerKey: /ssl/cctv.itmoscow.key
+# webrtcServerCert: /ssl/cctv.itmoscow.crt
 # webrtcAllowOrigin: '*'
-webrtcAllowOrigins: ["https://cctv.itmoscow", "172.19.0.6"]
+webrtcAllowOrigins: ["cctv.itmoscow"]
 webrtcLocalUDPAddress: :8189
 webrtcIPsFromInterfaces: yes
 webrtcAdditionalHosts: [media.cctv.itmoscow]
