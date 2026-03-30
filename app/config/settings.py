@@ -34,6 +34,7 @@ class Settings(BaseSettings):
     MEDIA_SERVER_PORT: int = Field(default=8554)
     MEDIA_USERNAME: str = Field(default="admin")
     MEDIA_PASSWORD: str = Field(default="admin123")
+    RTSP_TRANSPORT: str = Field(default="udp")
     RESTART_BACKOFF_SECONDS: int = Field(default=5, ge=1)
     FFMPEG_PATH: str = Field(default="ffmpeg")
 
