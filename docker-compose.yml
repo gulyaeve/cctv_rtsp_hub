@@ -40,8 +40,8 @@ services:
       - ./assets/record:${VIDEO_RECORD_PATH}
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      # - ./cctv.itmoscow.key.pem:/ssl/cctv.itmoscow.key.pem
-      # - ./cctv.itmoscow.pem:/ssl/cctv.itmoscow.pem
+      - ./cctv.itmoscow.key:/ssl/cctv.itmoscow.key
+      - ./cctv.itmoscow.crt:/ssl/cctv.itmoscow.crt
     networks:
       - default
     # ports:
