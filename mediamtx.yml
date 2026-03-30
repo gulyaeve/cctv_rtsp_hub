@@ -82,7 +82,7 @@ webrtcEncryption: no
 # webrtcServerCert: /ssl/cctv.itmoscow.crt
 # webrtcAllowOrigin: "https://cctv.itmoscow"
 webrtcAllowOrigins: ["https://*.cctv.itmoscow"]
-webrtcLocalUDPAddress: ''
+webrtcLocalUDPAddress: :8189
 webrtcIPsFromInterfaces: yes
 webrtcAdditionalHosts: [cctv.itmoscow, media.cctv.itmoscow]
 # webrtcTrustedProxies: [cctv-api-nginx-1]
