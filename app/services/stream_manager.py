@@ -98,14 +98,7 @@ class StreamWorker:
             [
                 "-i",
                 self.source_uri,
-                "-c", "copy"
-                # "-c:v", "libx264",
-                # "-pix_fmt", "yuv420p",
-                # "-preset", "ultrafast",
-                # "-b:v", "600k",
-                # "-c:a", "libopus",
-                # "-b:a", "64K",
-                # "-async", "50",
+                "-c", "copy",
                 "-f",
                 "rtsp",
                 f"{self.output_url}?jwt={settings.TOKEN_BEARER}",
