@@ -98,8 +98,8 @@ class StreamWorker:
             [
                 "-i",
                 self.source_uri,
-                "-c:v libx264 -pix_fmt yuv420p -preset ultrafast -b:v 600k",
-                "-c:a libopus -b:a 64K -async 50",
+                "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "ultrafast", "-b:v", "600k",
+                "-c:a", "libopus", "-b:a", "64K", "-async", "50",
                 "-f",
                 "rtsp",
                 self.output_url,
