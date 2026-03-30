@@ -31,7 +31,7 @@
 #   # Delete segments after this timespan.
 #   # Set to 0s to disable automatic deletion.
 #   recordDeleteAfter: 10m
-
+apiAllowOrigin: "https://cctv.itmoscow"
 
 ###############################################
 # Global settings -> Authentication
