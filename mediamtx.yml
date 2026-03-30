@@ -83,7 +83,7 @@ webrtcServerCert: /ssl/cctv.itmoscow.crt
 webrtcAllowOrigins: ["https://cctv.itmoscow"]
 webrtcLocalUDPAddress: :8189
 webrtcIPsFromInterfaces: yes
-webrtcAdditionalHosts: ["cctv.itmoscow", "media.cctv.itmoscow"]
+webrtcAdditionalHosts: [media.cctv.itmoscow]
 
 ###############################################
 # Path settings
