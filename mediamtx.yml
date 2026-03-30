@@ -75,7 +75,7 @@ rtspTransports: [udp]
 
 # Basic MediaMTX configuration
 webrtc: yes
-webrtcAddress: :8889
+webrtcAddress: "media.cctv.itmoscow"
 webrtcEncryption: no
 # webrtcEncryption: yes
 # webrtcServerKey: /ssl/cctv.itmoscow.key
