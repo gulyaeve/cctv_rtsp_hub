@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -34,8 +34,8 @@ class Settings(BaseSettings):
     # RTSP / Streaming
     MEDIA_SERVER_HOST: str = Field(default="localhost")
     MEDIA_SERVER_PORT: int = Field(default=8554)
-    MEDIA_USERNAME: str = Field(default="admin")
-    MEDIA_PASSWORD: str = Field(default="admin123")
+    MEDIA_USERNAME: Optional[str] = Field(default=None)
+    MEDIA_PASSWORD: Optional[str] = Field(default=None)
     RTSP_TRANSPORT: str = Field(default="udp")
     RESTART_BACKOFF_SECONDS: int = Field(default=5, ge=1)
     FFMPEG_PATH: str = Field(default="ffmpeg")
@@ -55,8 +55,12 @@ class Settings(BaseSettings):
 
     @property
     def media_server_rtsp_base_url(self) -> str:
-        """Construct RTSP base URL with credentials."""
-        return f"rtsp://{self.MEDIA_USERNAME}:{self.MEDIA_PASSWORD}@{self.MEDIA_SERVER_HOST}:{self.MEDIA_SERVER_PORT}"
+        if self.MEDIA_USERNAME and self.MEDIA_PASSWORD:
+            """Construct RTSP base URL with credentials."""
+            return f"rtsp://{self.MEDIA_USERNAME}:{self.MEDIA_PASSWORD}@{self.MEDIA_SERVER_HOST}:{self.MEDIA_SERVER_PORT}"
+        else:
+            return f"rtsp://{self.MEDIA_SERVER_HOST}:{self.MEDIA_SERVER_PORT}"
+
 
 
     # RabbitMQ
