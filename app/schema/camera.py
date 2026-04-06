@@ -7,7 +7,7 @@ class CameraScheme(BaseModel):
     classroom_id: int
     camera_ip: Optional[str] = None
     reg_ip: Optional[str] = None
-    view: str
+    view: Optional[str] = None
     rtsp_url: str
     rtsp_url_preview: Optional[str] = None
 
