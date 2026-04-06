@@ -29,18 +29,27 @@ async def camera_add_handler(camera: CameraScheme):
 
     base = settings.media_server_rtsp_base_url.rstrip("/")
     output_url = f"{base}/{camera.id}"
-
+    
     stream_manager.add_stream(
         source_uri=camera.rtsp_url,
         output_url=output_url,
         stream_id=camera.id,
     )
 
+    if camera.rtsp_url_preview is not None:
+        output_url_preview = f"{base}/{camera.id}_p"
+        stream_manager.add_stream(
+            source_uri=camera.rtsp_url_preview,
+            output_url=output_url_preview,
+            stream_id=f"{camera.id}_p",
+        )
 
 @broker.subscriber(queue_remove_camera, exchange)
 async def camera_remove_handler(camera: CameraScheme):
     logging.info(f"STREAM REMOVE {camera}")
     stream_manager.remove_stream(stream_id=camera.id)
+    if camera.rtsp_url_preview is not None:
+        stream_manager.remove_stream(stream_id=f"{camera.id}_p")
 
 
 @broker.subscriber(queue_update_camera, exchange)
@@ -48,6 +57,8 @@ async def camera_update_handler(camera: CameraScheme):
     logging.info(f"STREAM UPDATE {camera}")
 
     stream_manager.remove_stream(stream_id=camera.id)
+    if camera.rtsp_url_preview is not None:
+        stream_manager.remove_stream(stream_id=f"{camera.id}_p")
     await asyncio.sleep(1)
 
     base = settings.media_server_rtsp_base_url.rstrip("/")
@@ -58,6 +69,13 @@ async def camera_update_handler(camera: CameraScheme):
         output_url=output_url,
         stream_id=camera.id,
     )
+    if camera.rtsp_url_preview is not None:
+        output_url_preview = f"{base}/{camera.id}_p"
+        stream_manager.add_stream(
+            source_uri=camera.rtsp_url_preview,
+            output_url=output_url_preview,
+            stream_id=f"{camera.id}_p",
+        )
 
 
 async def main():

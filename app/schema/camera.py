@@ -9,6 +9,7 @@ class CameraScheme(BaseModel):
     reg_ip: Optional[str] = None
     view: str
     rtsp_url: str
+    rtsp_url_preview: Optional[str] = None
 
     class Config:
         from_attributes = True
