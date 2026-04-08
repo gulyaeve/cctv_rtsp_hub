@@ -81,11 +81,11 @@ webrtcEncryption: no
 # webrtcServerKey: /ssl/cctv.itmoscow.key
 # webrtcServerCert: /ssl/cctv.itmoscow.crt
 # webrtcAllowOrigin: "https://cctv.itmoscow"
-webrtcAllowOrigins: ["https://*.cctv.itmoscow"]
+webrtcAllowOrigins: ["https://*.cctv.itmoscow", "https://itmoscow.educom.ru"]
 webrtcLocalTCPAddress: :8189
 # webrtcLocalUDPAddress: :8189
 webrtcIPsFromInterfaces: yes
-webrtcAdditionalHosts: [cctv.itmoscow, media.cctv.itmoscow]
+webrtcAdditionalHosts: [cctv.itmoscow, media.cctv.itmoscow, itmoscow.educom.ru]
 # webrtcTrustedProxies: [cctv-api-nginx-1]
 
 ###############################################

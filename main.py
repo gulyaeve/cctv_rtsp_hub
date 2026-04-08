@@ -28,7 +28,7 @@ async def camera_add_handler(camera: CameraScheme):
     logging.info(f"STREAM ADD {camera}")
 
     base = settings.media_server_rtsp_base_url.rstrip("/")
-    output_url = f"{base}/{camera.id}"
+    output_url = f"{base}/media/{camera.id}"
     
     stream_manager.add_stream(
         source_uri=camera.rtsp_url,
@@ -37,7 +37,7 @@ async def camera_add_handler(camera: CameraScheme):
     )
 
     if camera.rtsp_url_preview is not None:
-        output_url_preview = f"{base}/{camera.id}_p"
+        output_url_preview = f"{base}/media/{camera.id}_p"
         stream_manager.add_stream(
             source_uri=camera.rtsp_url_preview,
             output_url=output_url_preview,
@@ -62,7 +62,7 @@ async def camera_update_handler(camera: CameraScheme):
     await asyncio.sleep(1)
 
     base = settings.media_server_rtsp_base_url.rstrip("/")
-    output_url = f"{base}/{camera.id}"
+    output_url = f"{base}/media/{camera.id}"
 
     stream_manager.add_stream(
         source_uri=camera.rtsp_url,
@@ -70,7 +70,7 @@ async def camera_update_handler(camera: CameraScheme):
         stream_id=camera.id,
     )
     if camera.rtsp_url_preview is not None:
-        output_url_preview = f"{base}/{camera.id}_p"
+        output_url_preview = f"{base}/media/{camera.id}_p"
         stream_manager.add_stream(
             source_uri=camera.rtsp_url_preview,
             output_url=output_url_preview,
