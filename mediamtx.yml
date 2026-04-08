@@ -86,6 +86,8 @@ webrtcLocalTCPAddress: :8189
 # webrtcLocalUDPAddress: :8189
 webrtcIPsFromInterfaces: yes
 webrtcAdditionalHosts: [cctv.itmoscow, media.cctv.itmoscow, itmoscow.educom.ru]
+webrtcICEServers2:
+  - url: stun:stun.l.google.com:19302
 # webrtcTrustedProxies: [cctv-api-nginx-1]
 
 ###############################################
