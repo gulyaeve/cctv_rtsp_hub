@@ -96,13 +96,25 @@ class StreamWorker:
 
         cmd.extend(
             [
-                "-i",
-                self.source_uri,
-                "-c", "copy",
-                "-f",
-                "rtsp",
-                f"{self.output_url}?jwt={settings.TOKEN_BEARER}",
+                "-i", self.source_uri,
+                "-c:v", "libx264 ",
+                # "-pix_fmt", "yuv420p",
+                "-preset", "ultrafast",
+                "-tune", "zerolatency",
+                # "-b:v", "1600k",
+                # "-c:a", "libopus",
+                # "-b:a", "128K",
+                # "-async", "50",
+                "-f", "rtsp", f"{self.output_url}?jwt={settings.TOKEN_BEARER}",
             ]
+            # [
+            #     "-i",
+            #     self.source_uri,
+            #     "-c", "copy",
+            #     "-f",
+            #     "rtsp",
+            #     f"{self.output_url}?jwt={settings.TOKEN_BEARER}",
+            # ]
         )
 
         process = subprocess.Popen(
