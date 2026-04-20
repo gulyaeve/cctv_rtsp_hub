@@ -97,7 +97,7 @@ class StreamWorker:
         cmd.extend(
             [
                 "-i", self.source_uri,
-                "-c:v", "libx264 ",
+                "-c:v", "libx264",
                 # "-pix_fmt", "yuv420p",
                 "-preset", "ultrafast",
                 "-tune", "zerolatency",
