@@ -60,6 +60,10 @@ authHTTPFingerprint: E27A68F05F05CB7CA9BABE71402024159E3C938AC93ADE627BE79C72965
 metrics: yes
 metricsAddress: :9998
 
+
+udpReadBufferSize: 1000000
+
+
 ###############################################
 # Global settings -> RTSP server
 
