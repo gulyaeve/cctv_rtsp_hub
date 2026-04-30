@@ -61,7 +61,7 @@ metrics: yes
 metricsAddress: :9998
 
 writeQueueSize: 1024
-udpMaxPayloadSize: 1500
+udpMaxPayloadSize: 1472
 udpReadBufferSize: 1000000
 
 
